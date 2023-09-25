@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import CarInfo from './CarInfo'
+import ScrollUp from './ScrollUp'
 
 const  CarCards = ({cars}) => {
     const [show,setShow]=useState(false)
@@ -8,7 +9,17 @@ const  CarCards = ({cars}) => {
 
     const [type,setType]=useState('any')
     const [searchCar,setSearchCar]=useState('')
-  const [error,setError]=useState(false)
+  const [scroll,setScroll]=useState(false)
+
+  useEffect(()=>{
+window.addEventListener("scroll",()=>{
+  if(window.scrollY > 1200){
+    setScroll(true)
+  }else{
+    setScroll(false)
+  }
+})
+  },[scroll])
     
     
   return (
@@ -63,6 +74,7 @@ const  CarCards = ({cars}) => {
                 
                 {show && <CarInfo setShow={setShow} car={car}/>}
                 
+                {scroll && <ScrollUp/>}
                 
 
         </div>
