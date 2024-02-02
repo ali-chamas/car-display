@@ -5,7 +5,7 @@ import HeroCar from '../components/HeroCar'
 
 const Hero = () => {
   return (
-    <div className=' h-screen md:-mt-10  flex  flex-col items-center  justify-evenly md:flex-row md:justify-between  '>
+    <div className=' h-screen md:-mt-10  flex  flex-col items-center gap-6 md:gap-0 md:flex-row md:justify-between  '>
 
             <div className='p-10 text-center flex flex-col gap-5 items-center'>
               <h1 className='text-4xl lg:text-7xl xl:text-8xl font-bold'>The Best <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-900 font-extrabold'>Car Display</span>
